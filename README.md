@@ -10,6 +10,8 @@ AsynCLI 是一款专为大模型（LLM）和 AI Agent（如 OpenClaw）设计的
 ### 动态心跳机制
 运行中的任务会根据设定周期主动推送“状态摘要”。Agent 无需盲目等待，即可随时掌握任务进度。
 
+主动推送使用Playwright库在Chrome Debug模式下注入到Openclaw的Dashboard中，实现模拟主动拉起对话。
+
 ### 交互式阻塞拦截
 内建启发式状态机，能够精准识别终端中的 [y/N]、密码输入或选项菜单。一旦检测到阻塞， AsynCLI 会立刻向 Agent 注入紧急干预请求。
 
